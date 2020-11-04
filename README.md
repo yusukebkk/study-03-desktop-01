@@ -6,6 +6,7 @@ view.pyがメインの実行ファイルです。これを実行するとデス�
 表示されます。
 
 参考サイト：https://qiita.com/inoory/items/f431c581332c8d500a3b
+完成形：https://youtu.be/wBi6_DcfRGQ
 
 # 課題1
 HTML使い検索ワード入力と検索ボタンを作ってください
