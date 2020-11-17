@@ -5,6 +5,7 @@
 view.pyがメインの実行ファイルです。これを実行するとデスクトップアプリが
 表示されます。
 
+説明：https://youtu.be/UsgiZGYkZrY
 参考サイト：https://qiita.com/inoory/items/f431c581332c8d500a3b
 完成形：https://youtu.be/wBi6_DcfRGQ
 
