@@ -6,16 +6,27 @@
     <body>
         <h1>eelテスト</h1>
         <form>
-            <label>CSVファイル名</label><input type="text" required><br>
-            <label>検索キーワード</label><input type="text" required>
-            <button  type="submit">検索する</button>
+            <label>CSVファイル名</label><input id="fileName" type="text" value="source.csv" required><br>
+            <label>検索キーワード</label><input id="keyword" type="text" required>
+            <button id="submit" type="button">検索する</button>
         </form>
-        <textarea></textarea>
+        <textarea id="resultArea">a</textarea>
 
         <script type="text/javascript" src="./eel.js"></script>
         <script>
+            const search = document.getElementById('submit')
             search.addEventListener('click', () => {
-
+                async function run() {
+                    const fileName = document.getElementById('fileName').value
+                    const keyword = document.getElementById('keyword').value
+                    let result = await eel.kimetsu_search(fileName,keyword)();
+                    return result;
+                }
+                run().then(result =>{
+                    const resultArea = document.getElementById("resultArea");
+                    console.log(result);
+                    resultArea.textContent = resultArea.textContent+result;
+                });
             })
 
             eel.expose(view_log_js)
