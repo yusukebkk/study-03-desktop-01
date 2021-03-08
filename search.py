@@ -9,18 +9,25 @@ def kimetsu_search(file_name,word):
 
     # 検索
     if word in source:
-        print("『{}』はあります\n".format(word))
-        result = "『{}』はあります\n".format(word)
+        print(f"『{word}』はあります")
+        log_message = f"『{word}』はあります\n"
     else:
-        print("『{}』はありません".format(word))
-        result = "『{}』はありません".format(word)
+        print(f"『{word}』はありません")
+        log_message = f"『{word}』はありません\n"
         # 追加
         #add_flg=input("追加登録しますか？(0:しない 1:する)　＞＞　")
         #if add_flg=="1":
         source.append(word)
+        print(f"『{word}』が追加されました")
+        log_message += f"『{word}』が追加されました\n"
+            
+
+            
+
+        
     
     # CSV書き込み
     df=pd.DataFrame(source,columns=["name"])
     df.to_csv("./source.csv",encoding="utf_8-sig")
     print(source)
-    return result
+    return log_message
